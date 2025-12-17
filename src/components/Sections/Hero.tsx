@@ -6,10 +6,12 @@ import WertWidget from "../../widget-initializer-master/index";
 function openWert() {
   const widget = new WertWidget({
     partner_id: "01KC903Q0NY0H61RZ17G8H26T3",
-    origin: "https://widget.wert.io",
+    origin: "https://sandbox.wert.io",
+    // origin: "https://widget.wert.io",  // Use this for production
     address: "0xCBa0b4c60626a3a672C65fA16dB09C776615745c",
     network: "ethereum",
     commodity: "USDT",
+    currency_amount: 1000,
     lang: "en",
 
     listeners: {

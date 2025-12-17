@@ -1,8 +1,8 @@
-// import { version } from './package.json';
-const version = "local";
+import { version } from './package.json';
+// const version = "local";
 import { EventTypes, Options, WidgetEvents, SetThemeParameters, InternalWidgetEvents } from './types';
 
-const externalStaticOrigin = 'https://javascript.wert.io';
+// const externalStaticOrigin = 'https://javascript.wert.io';
 
 class WertWidget {
   private iframe: HTMLIFrameElement = document.createElement('iframe');
