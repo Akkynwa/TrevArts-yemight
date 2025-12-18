@@ -46,8 +46,12 @@ export default function WertWidgetButton() {
         click_id: data.click_id,
         commodity: 'ETH',
         network: 'sepolia',
-        fiat_currency: 'USD',
-        fiat_amount: 50 * quantity,
+
+        ...({
+    fiat_currency: 'USD',
+    fiat_amount: 50 * quantity,
+  } as any),
+
         
         // Locked Smart Contract Data
         sc_address: data.sc_address,
@@ -62,6 +66,8 @@ export default function WertWidgetButton() {
             image_url: 'https://yourcdn.com/nft.png',
             seller: 'TrevArts',
           },
+
+               
         },
       };
 

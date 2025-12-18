@@ -10,13 +10,13 @@ import { WagmiProvider } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { config } from './config' // Ensure you created src/config.ts
 
-import type { MetaMaskInpageProvider } from '@metamask/providers';
+// import type { MetaMaskInpageProvider } from '@metamask/providers';
 
-declare global {
-  interface Window {
-    ethereum?: MetaMaskInpageProvider;
-  }
-}
+// declare global {
+//   interface Window {
+//     ethereum?: MetaMaskInpageProvider;
+//   }
+// }
 
 (window as any).Buffer = Buffer;
 
