@@ -8,7 +8,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app = express();
 
-app.use(cors({ origin: true }));
+// app.use(cors({ origin: true }));
+// Allow everything for testing purposes
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 app.post('/api/wert/session', async (req, res) => {
