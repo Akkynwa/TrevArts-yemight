@@ -1,28 +1,7 @@
 // src/components/Sections/Hero.tsx
 import { Sparkles, ArrowDown } from 'lucide-react'
-import WertWidget from "../../widget-initializer-master/index";
+import { Link } from 'react-router-dom'
 
-
-function openWert() {
-  const widget = new WertWidget({
-    partner_id: "01KC903Q0NY0H61RZ17G8H26T3",
-    origin: "https://sandbox.wert.io",
-    // origin: "https://widget.wert.io",  // Use this for production
-    address: "0xCBa0b4c60626a3a672C65fA16dB09C776615745c",
-    network: "ethereum",
-    commodity: "USDT",
-    currency_amount: 1000,
-    lang: "en",
-
-    listeners: {
-      close: () => console.log("Widget closed"),
-      "payment-status": (data) => console.log("Payment status", data),
-      error: (err) => console.error("Wert error", err)
-    }
-  });
-
-  widget.open();
-}
 
 export default function Hero() {
   return (
@@ -57,12 +36,10 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-            <a className="px-8 py-4 bg-[#f53513ff] text-zinc-950 text-lg font-bold rounded-lg hover:bg-[#d4ff33] hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2"
-            onClick={openWert}
-            >
+            <Link to="/nftcheckout"  className="px-8 py-4 bg-[#f53513ff] text-zinc-950 text-lg font-bold rounded-lg hover:bg-[#d4ff33] hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2"            >
               Mint Now
               <Sparkles className="w-5 h-5" />
-            </a>
+            </Link>
             <a
               href="#lore"
               className="px-8 py-4 bg-transparent border-2 border-[#f53513ff]/30 text-zinc-200 text-lg font-medium rounded-lg hover:bg-[#f53513ff]/10 hover:border-[#f53513ff] transition-all flex items-center justify-center gap-2"

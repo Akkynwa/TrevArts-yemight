@@ -11,6 +11,7 @@ import SneakPeek from './components/Sections/SneakPeek'
 import Community from './components/Sections/Community'
 import MusicPlayer from './components/UI/MusicPlayer'
 import Dashboard from './components/Sections/Dashboard'
+import WertWidgetButton from './components/Sections/WertWidgetButton'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/nftcheckout" element={<WertWidgetButton />} />
         </Routes>
       </main>
       <Footer />
