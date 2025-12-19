@@ -8,11 +8,24 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app = express();
 
+
 // app.use(cors({ origin: true }));
 // Allow everything for testing purposes
-app.use(cors({ origin: '*' }));
-app.use(express.json());
+// app.use(cors({ origin: '*' }));
+app.use(
+  cors({
+    origin: [
+      'https://trevartsyemi.vercel.app',
+      'http://localhost:5173'
+    ],
+  })
+);
 
+app.use(express.json());
+app.use((req, res, next) => {
+  console.log(`Incoming Request: ${req.method} ${req.url}`);
+  next();
+});
 app.post('/api/wert/session', async (req, res) => {
   try {
     const { user_address, quantity = 1 } = req.body;
@@ -72,4 +85,9 @@ app.post('/api/wert/session', async (req, res) => {
   }
 });
 
-app.listen(4000, () => console.log('🚀 Backend live on port 4000'));
+// app.listen(4000, () => console.log('🚀 Backend live on port 4000'));
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Backend live on port ${PORT}`);
+});

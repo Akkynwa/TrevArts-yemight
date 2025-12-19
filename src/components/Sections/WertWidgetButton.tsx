@@ -29,7 +29,7 @@ export default function WertWidgetButton() {
 
     try {
       // 1. Get the signature from your backend for THIS specific address and quantity
-      const response = await fetch('https://resumable-cogent-kristyn.ngrok-free.dev/api/wert/session', {
+      const response = await fetch('https://trevarts-backend.onrender.com/api/wert/session', {
         method: 'POST',
         headers: { 
     'Content-Type': 'application/json',
